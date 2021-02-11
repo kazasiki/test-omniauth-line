@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    build: .
+    env_file:
+      - .env
+    command: bundle exec ruby app.rb
+    volumes:
+      - .:/app
+    ports:
+      - 4567:4567
