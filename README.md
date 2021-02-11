@@ -1,6 +1,6 @@
 # Test OmniAuth Line
 
-This Repo contains the Test Environment for omniauth-line gem.
+This Repo contains the Test Environment for [omniauth-line](https://github.com/kazasiki/omniauth-line) gem.
 
 ## USAGE
 
