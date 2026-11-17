@@ -1,4 +1,5 @@
 require "sinatra"
+require "securerandom"
 require "omniauth"
 require "omniauth-line"
 require "json"
@@ -6,8 +7,10 @@ require "json"
 class SinatraOmniAuth < Sinatra::Base
   configure do
     set :sessions, true
+    set :session_secret, ENV.fetch("SESSION_SECRET") { SecureRandom.hex(64) }
     set :inline_templates, true
     set :bind, '0.0.0.0'
+    set :host_authorization, { permitted_hosts: [] }
   end
 
   use OmniAuth::Builder do
